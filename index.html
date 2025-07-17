@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual Growth Plan Assessment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Spiritual Growth Plan</h1>
+            <p>A journey of discovery to become God's best version of you</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div id="questionSection">
+                <div class="question-container">
+                    <div class="question-number" id="questionNumber"></div>
+                    <div class="category" id="categoryName"></div>
+                    <div class="question" id="questionText"></div>
+                    <div class="question-detail" id="questionDetail"></div>
+                </div>
+
+                <div class="rating-container" id="ratingContainer">
+                    <div class="slider-wrapper">
+                        <input type="range" min="0" max="5" value="0" class="rating-slider" id="ratingSlider">
+                        <div class="slider-thumb" id="sliderThumb">0</div>
+                    </div>
+                </div>
+
+                <div class="rating-labels">
+                    <span>Strongly Disagree</span>
+                    <span>Strongly Agree</span>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">Previous</button>
+                    <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Next</button>
+                </div>
+            </div>
+
+            <div class="results" id="results">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #333;">Your Spiritual Growth Assessment Results</h2>
+                <div id="resultsContainer"></div>
+                <div class="results-actions">
+                    <button class="restart-btn" onclick="restartAssessment()">Take Assessment Again</button>
+                    <a href="https://kingfisher.org.uk" target="_blank" class="steps-btn">Steps to Change</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
