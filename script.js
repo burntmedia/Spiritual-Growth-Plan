@@ -254,26 +254,26 @@ function showResults() {
     // Go deeper content for each category
     const goDeeperContent = [
         `<p>
-            <strong>Connecting with the family of God:</strong> The book of Romans is a great starting point for advice on how to connect with the family of God. If you have 5 minutes spare read Romans 12 as it speaks so clearly into these topics!<br><br>
+            The book of Romans is a great starting point for advice on how to connect with the family of God. If you have 5 minutes spare read <a href="https://www.bible.com/bible/111/ROM.12.NIV">Romans 12</a> as it speaks so clearly into these topics!<br><br>
             If you want to go even further into studying it we have a great Bible study series available called <em>Romans: The Real Truth of Christianity</em>; ask your connect group leader if you would like a copy.
         </p>`,
         `<p>
-            <strong>Maturing in my spiritual life:</strong> You can read the bible anywhere with the YouVersion Bible app. It has reading plans and it can even read it to you! Goto <a href="https://bible.com" target="_blank">bible.com</a> for more information.<br><br>
+            You can read the bible anywhere with the YouVersion Bible app. It has reading plans and it can even read it to you! Goto <a href="https://bible.com" target="_blank">bible.com</a> for more information.<br><br>
             <a href="https://thebibleproject.com" target="_blank">Thebibleproject.com</a> is a great resource for developing a deeper understanding of the bible and how it all fits together. The videos are simple and quick so it’s a great starting point.<br><br>
-            We believe in the principle of tithing which is how church gets most of it’s funding. If you don’t know much about tithing then ask one of the leaders at church or watch a talk by James Burn called “Giving as an act of Faith” on YouTube (<a href="https://tiny.cc/kfgiving" target="_blank">tiny.cc/kfgiving</a>).<br>
+            We believe in the principle of tithing which is how church gets most of it’s funding. If you don’t know much about tithing then ask one of the leaders at church or watch a talk by James Burn called <a href="https://youtube.com/live/6DldkL6PSbs">“Giving as an act of Faith”</a>.<br>
             If you decide that you would like to tithe then we have a giving form with all the information you need at the back of this booklet.
         </p>`,
         `<p>
-            <strong>Discovering my ministry in the church:</strong> Do you want to get involved but have no idea where you would be most effective at serving?<br>
-            We have a tool called “Discovery” at Kingfisher Church which is like a questionnaire which helps you figure out how God has wired you up as a person and what areas of ministry you may suit serving in. Ollie or James will look through the finished questionnaire and advise on what ministries will be a great fit for you to get involved in!<br>
+            Do you want to get involved but have no idea where you would be most effective at serving?<br><br>
+            We have a tool called “Discovery” at Kingfisher Church which is like a questionnaire which helps you figure out how God has wired you up as a person and what areas of ministry you may suit serving in. Ollie or James will look through the finished questionnaire and advise on what ministries will be a great fit for you to get involved in!<br><br>
             Ask your connect group leader or any leader at church for more information or to get a copy of Discovery.
         </p>`,
         `<p>
-            <strong>Growing in my sense of mission in the world:</strong> Commit to one specific person in your life that you could be praying that they will start a journey to faith in God. Think of that person as your “Plus One” to invite along to church.<br><br>
+            Commit to one specific person in your life that you could be praying that they will start a journey to faith in God. Think of that person as your “Plus One” to invite along to church.<br><br>
             As well as finding where you can serve in Church, there are plenty of opportunities to serve in different ways in the social enterprise that grew out of our church.
         </p>`,
         `<p>
-            <strong>Deepening my relationship with God in worship:</strong> Try listening to more worship music throughout the week. Journeys in the car can become opportunities for times of worship and prayer so that time is useful!<br><br>
+            Try listening to more worship music throughout the week. Journeys in the car can become opportunities for times of worship and prayer so that time is useful!<br><br>
             Find us on Spotify for Kingfisher Church songs as well as playlists of worship music that we will either be singing at church or that we think will be encouraging to listen to.
         </p>`
     ];
@@ -284,6 +284,7 @@ function showResults() {
             categoryScore += answers[answerIndex + i];
         }
         const scoreInfo = getScoreLevel(categoryScore);
+        const percent = Math.round((categoryScore / 25) * 100);
 
         // Accordion HTML
         const accordionDiv = document.createElement('div');
@@ -291,6 +292,9 @@ function showResults() {
 
         accordionDiv.innerHTML = `
             <div class="accordion-header">
+                <div class="category-progress-bar">
+                    <div class="category-progress-fill" style="width:${percent}%;"></div>
+                </div>
                 <div class="accordion-summary">
                     <div>
                         <h3>${category.category}</h3>

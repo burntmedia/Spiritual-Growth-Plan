@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Spiritual Growth Plan</h1>
+            <img src="logo.svg" alt="Spiritual Growth Plan Logo" class="main-logo">
             <p>A journey of discovery to become God's best version of you</p>
         </div>
 
@@ -54,6 +54,15 @@
             </div>
         </div>
     </div>
+    <footer class="main-footer">
+        <p>
+            &copy; <span id="footerYear"></span>
+            <a href="https://kingfisher.org.uk" target="_blank" rel="noopener" class="footer-link">Kingfisher Church</a>
+        </p>
+    </footer>
+    <script>
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
